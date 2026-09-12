@@ -13,7 +13,1188 @@
     --fondo: #080b18;
     --fondo-card: #11162a;
     --fondo-card-2: #171d35;
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fondo: #080b18;
+    --fondo-card: #11162a;
+    --fondo-card-2: #171d35;
+
+    --blanco: #ffffff;
+    --texto: #e8eaf3;
+    --texto-secundario: #a8aec5;
+
+    --principal: #8b5cf6;
+    --principal-claro: #a78bfa;
+
+    --rosa: #ec4899;
+    --azul: #38bdf8;
+
+    --borde: rgba(255, 255, 255, 0.08);
+
+    --sombra:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(139, 92, 246, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(236, 72, 153, 0.12),
+            transparent 35%
+        ),
+        var(--fondo);
+
+    color: var(--texto);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FONDO
+========================================= */
+
+.background-shape {
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    opacity: 0.12;
+}
+
+.shape-one {
+    background: var(--principal);
+
+    top: -150px;
+    left: -150px;
+}
+
+.shape-two {
+    background: var(--rosa);
+
+    bottom: -150px;
+    right: -150px;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 720px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   PANTALLAS
+========================================= */
+
+.pantalla {
+    display: none;
+
+    width: 100%;
+
+    animation: aparecer 0.45s ease;
+}
+
+.pantalla.activa {
+    display: block;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   INICIO
+========================================= */
+
+#pantallaInicio {
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.logo-fe {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--principal),
+            var(--rosa)
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 38px;
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px rgba(139, 92, 246, 0.3);
+
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.etiqueta {
+    display: inline-block;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: var(--principal-claro);
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 65px);
+
+    line-height: 0.98;
+
+    color: var(--blanco);
+
+    margin-bottom: 25px;
+}
+
+h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--principal-claro),
+            var(--rosa)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.descripcion {
+    max-width: 500px;
+
+    margin: auto;
+
+    color: var(--texto-secundario);
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+.versiculo-mini {
+    margin: 35px auto;
+
+    max-width: 500px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 20px;
+}
+
+.versiculo-mini i {
+    color: var(--principal-claro);
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.versiculo-mini p {
+    font-style: italic;
+
+    line-height: 1.6;
+
+    color: var(--texto);
+}
+
+.versiculo-mini span {
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    color: var(--principal-claro);
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.btn-principal {
+    width: 100%;
+
+    max-width: 350px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    padding: 17px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--principal),
+            var(--rosa)
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 10px 30px rgba(139, 92, 246, 0.25);
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(139, 92, 246, 0.4);
+}
+
+.btn-principal i {
+    margin-left: 8px;
+}
+
+.btn-volver {
+    display: block;
+
+    margin: 18px auto 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--texto-secundario);
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    padding: 10px;
+}
+
+.btn-volver:hover {
+    color: white;
+}
+
+
+/* =========================================
+   ENCABEZADOS
+========================================= */
+
+.encabezado {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.numero-paso {
+    display: block;
+
+    color: var(--principal-claro);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+}
+
+h2 {
+    color: white;
+
+    font-size: clamp(30px, 6vw, 43px);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+h2 span {
+    color: var(--principal-claro);
+}
+
+.encabezado p {
+    color: var(--texto-secundario);
+
+    line-height: 1.6;
+
+    max-width: 550px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   REDES SOCIALES
+========================================= */
+
+.redes-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.red-card {
+    border: 1px solid var(--borde);
+
+    border-radius: 22px;
+
+    padding: 25px 15px;
+
+    background: var(--fondo-card);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    text-align: center;
+}
+
+.red-card:hover {
+    transform: translateY(-5px);
+
+    background: var(--fondo-card-2);
+
+    border-color: rgba(255,255,255,0.18);
+}
+
+.icono-red {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 27px;
+
+    background: rgba(255,255,255,0.07);
+}
+
+.red-card span {
+    display: block;
+
+    font-weight: bold;
+
+    font-size: 16px;
+}
+
+.red-card small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+}
+
+.instagram .icono-red {
+    color: #f472b6;
+}
+
+.tiktok .icono-red {
+    color: #67e8f9;
+}
+
+.whatsapp .icono-red {
+    color: #4ade80;
+}
+
+.facebook .icono-red {
+    color: #60a5fa;
+}
+
+.youtube .icono-red {
+    color: #f87171;
+}
+
+.twitter .icono-red {
+    color: white;
+}
+
+
+/* =========================================
+   RESULTADO
+========================================= */
+
+#pantallaResultado {
+    text-align: center;
+
+    padding: 20px 10px;
+}
+
+.resultado-icono {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 28px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--principal),
+            var(--rosa)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px rgba(139, 92, 246, 0.25);
+}
+
+#resultadoTitulo {
+    margin-bottom: 15px;
+}
+
+.resultado-descripcion {
+    color: var(--texto-secundario);
+
+    line-height: 1.7;
+
+    max-width: 500px;
+
+    margin: auto auto 25px;
+}
+
+.reto-card,
+.pregunta-card {
+    text-align: left;
+
+    background: var(--fondo-card);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-bottom: 14px;
+}
+
+.reto-titulo {
+    color: var(--principal-claro);
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.reto-titulo i {
+    margin-right: 7px;
+}
+
+.reto-card p {
+    color: var(--texto);
+
+    line-height: 1.6;
+}
+
+.pregunta-card {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+}
+
+.pregunta-card > i {
+    color: var(--rosa);
+
+    font-size: 22px;
+
+    margin-top: 3px;
+}
+
+.pregunta-card span {
+    font-size: 12px;
+
+    color: var(--texto-secundario);
+}
+
+.pregunta-card p {
+    color: white;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+
+    margin-top: 4px;
+}
+
+.versiculo-resultado {
+    margin: 25px 0;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(139, 92, 246, 0.09);
+
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.versiculo-resultado p {
+    font-style: italic;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+.versiculo-resultado span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--principal-claro);
+
+    font-weight: bold;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   TIPO DE CRISTIANO
+========================================= */
+
+.cristianos-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.tipo-card {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    border: 1px solid var(--borde);
+
+    background: var(--fondo-card);
+
+    color: white;
+
+    padding: 17px;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.tipo-card:hover {
+    transform: translateX(5px);
+
+    background: var(--fondo-card-2);
+
+    border-color:
+        rgba(167, 139, 250, 0.4);
+}
+
+.tipo-icono {
+    min-width: 50px;
+    height: 50px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        rgba(139, 92, 246, 0.12);
+
+    color: var(--principal-claro);
+
+    font-size: 20px;
+}
+
+.tipo-card strong {
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.tipo-card p {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.flecha {
+    margin-left: auto;
+
+    color: #69708c;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   COMPROMISO (P.I.E.N.S.A.)
+========================================= */
+
+#pantallaCompromiso {
+    text-align: center;
+
+    padding: 15px;
+}
+
+.compromiso-icono {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 24px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--principal),
+            var(--rosa)
+        );
+
+    color: white;
+
+    font-size: 30px;
+}
+
+#compromisoTexto {
+    color: var(--texto-secundario);
+
+    line-height: 1.6;
+
+    max-width: 500px;
+
+    margin: auto auto 25px;
+}
+
+.pausa-box {
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    margin: 25px 0;
+
+    padding: 12px 8px;
+
+    background: var(--fondo-card);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 20px;
+}
+
+.paso {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.paso span {
+    display: flex;
+
+    width: 34px;
+    height: 34px;
+
+    margin: 0 auto 6px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--principal),
+            var(--rosa)
+        );
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: 13px;
+
+    color: white;
+}
+
+.paso strong {
+    display: block;
+
+    font-size: 9px;
+
+    color: white;
+
+    letter-spacing: 0.2px;
+}
+
+.paso small {
+    display: block;
+
+    font-size: 7.5px;
+
+    color: var(--texto-secundario);
+
+    margin-top: 3px;
+    line-height: 1.1;
+}
+
+.linea {
+    width: 6px;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.15);
+
+    align-self: center;
+}
+
+.pregunta-final {
+    padding: 25px;
+
+    margin: 20px 0;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.12),
+            rgba(236, 72, 153, 0.08)
+        );
+
+    border: 1px solid rgba(167, 139, 250, 0.18);
+}
+
+.pregunta-final span {
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+}
+
+.pregunta-final h3 {
+    color: white;
+
+    font-size: 25px;
+
+    margin-top: 8px;
+}
+
+.versiculo-final {
+    padding: 20px;
+
+    margin-bottom: 25px;
+}
+
+.versiculo-final p {
+    color: var(--texto-secundario);
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    font-size: 14px;
+}
+
+.versiculo-final strong {
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--principal-claro);
+}
+
+
+/* =========================================
+   RECUERDO / STICKER
+========================================= */
+
+#pantallaRecuerdo {
+    text-align: center;
+
+    padding: 20px 10px;
+}
+
+.confeti {
+    font-size: 40px;
+
+    color: var(--principal-claro);
+
+    margin-bottom: 10px;
+
+    animation: girar 3s linear infinite;
+}
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#pantallaRecuerdo h2 {
+    margin-bottom: 25px;
+}
+
+.sticker {
+    width: 280px;
+    height: 280px;
+
+    margin: 0 auto 30px;
+
+    padding: 25px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f0ecff
+        );
+
+    color: #171329;
+
+    border: 8px solid #d8cdfc;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+}
+
+.sticker-phone {
+    font-size: 25px;
+
+    color: #7c3aed;
+
+    margin-bottom: 5px;
+}
+
+.sticker-title {
+    font-size: 29px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #6d28d9;
+}
+
+.sticker-question {
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin: 12px 0;
+
+    max-width: 190px;
+
+    line-height: 1.2;
+}
+
+.sticker-line {
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    font-weight: bold;
+
+    color: #6b6680;
+}
+
+.sticker-cross {
+    position: absolute;
+
+    right: 30px;
+
+    bottom: 25px;
+
+    font-size: 25px;
+
+    color: #ec4899;
+}
+
+.recuerdo-texto {
+    max-width: 480px;
+
+    margin: 0 auto 25px;
+
+    color: var(--texto-secundario);
+
+    line-height: 1.7;
+}
+
+.recuerdo-texto strong {
+    color: white;
+}
+
+.frase-final {
+    color: var(--principal-claro);
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.frase-final i {
+    margin-right: 5px;
+
+    color: var(--rosa);
+}
+
+
+/* =========================================
+   PIE
+========================================= */
+
+footer {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: #555b75;
+
+    font-size: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 520px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .app {
+        min-height: auto;
+    }
+
+    #pantallaInicio {
+        padding: 25px 5px;
+    }
+
+    .logo-fe {
+        width: 72px;
+        height: 72px;
+
+        font-size: 30px;
+    }
+
+    .redes-grid {
+        gap: 10px;
+    }
+
+    .red-card {
+        padding: 20px 10px;
+    }
+
+    .icono-red {
+        width: 52px;
+        height: 52px;
+
+        font-size: 23px;
+    }
+
+    .pausa-box {
+        gap: 2px;
+        padding: 8px 4px;
+    }
+
+    .paso span {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .paso strong {
+        font-size: 7.5px;
+    }
+
+    .paso small {
+        font-size: 6.5px;
+    }
+
+    .linea {
+        width: 3px;
+    }
+
+    .sticker {
+        width: 250px;
+        height: 250px;
+    }
+
+    .sticker-title {
+        font-size: 25px;
+    }
+}
     --blanco: #ffffff;
     --texto: #e8eaf3;
     --texto-secundario: #a8aec5;
