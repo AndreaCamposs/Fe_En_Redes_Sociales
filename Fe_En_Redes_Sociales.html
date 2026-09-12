@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Fe También Se Publica</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+
+    <main class="app">
+
+        <!-- =========================
+             PANTALLA DE BIENVENIDA
+        ========================== -->
+        <section id="pantallaInicio" class="pantalla activa">
+
+            <div class="logo-fe">
+                <i class="fa-solid fa-cross"></i>
+            </div>
+
+            <span class="etiqueta">UNA EXPERIENCIA PARA REFLEXIONAR</span>
+
+            <h1>
+                Mi fe también
+                <span>se publica.</span>
+            </h1>
+
+            <p class="descripcion">
+                Lo que publicamos, compartimos, comentamos y reaccionamos
+                también puede mostrar quién somos.
+            </p>
+
+            <div class="versiculo-mini">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>
+                    “Todo me es lícito, pero no todo conviene;
+                    todo me es lícito, pero no todo edifica.”
+                </p>
+                <span>1 Corintios 10:23</span>
+            </div>
+
+            <button class="btn-principal" onclick="mostrarRedes()">
+                Comenzar
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="pie-inicio">
+                Detente • Piensa • Decide
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SELECCIÓN DE RED SOCIAL
+        ========================== -->
+        <section id="pantallaRedes" class="pantalla">
+
+            <div class="encabezado">
+                <span class="numero-paso">01 / 03</span>
+
+                <h2>
+                    ¿Qué red social
+                    <span>se parece más a ti?</span>
+                </h2>
+
+                <p>
+                    No pienses solamente en cuál utilizas más.
+                    Elige la que más representa tu forma de interactuar.
+                </p>
+            </div>
+
+            <div class="redes-grid">
+
+                <button class="red-card instagram"
+                        onclick="mostrarPersonalidad('instagram')">
+                    <div class="icono-red">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <span>Instagram</span>
+                    <small>El que muestra</small>
+                </button>
+
+                <button class="red-card tiktok"
+                        onclick="mostrarPersonalidad('tiktok')">
+                    <div class="icono-red">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <span>TikTok</span>
+                    <small>El que influye</small>
+                </button>
+
+                <button class="red-card whatsapp"
+                        onclick="mostrarPersonalidad('whatsapp')">
+                    <div class="icono-red">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span>WhatsApp</span>
+                    <small>El que comunica</small>
+                </button>
+
+                <button class="red-card facebook"
+                        onclick="mostrarPersonalidad('facebook')">
+                    <div class="icono-red">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <span>Facebook</span>
+                    <small>El que comparte</small>
+                </button>
+
+                <button class="red-card youtube"
+                        onclick="mostrarPersonalidad('youtube')">
+                    <div class="icono-red">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <span>YouTube</span>
+                    <small>El que observa</small>
+                </button>
+
+                <button class="red-card twitter"
+                        onclick="mostrarPersonalidad('twitter')">
+                    <div class="icono-red">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                    <span>X</span>
+                    <small>El que responde</small>
+                </button>
+
+            </div>
+
+            <button class="btn-volver" onclick="volverInicio()">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             RESULTADO PERSONALIDAD
+        ========================== -->
+        <section id="pantallaResultado" class="pantalla">
+
+            <div id="resultadoIcono" class="resultado-icono">
+                <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+
+            <span class="numero-paso">TU PERSONALIDAD DIGITAL</span>
+
+            <h2 id="resultadoTitulo">
+                El que muestra
+            </h2>
+
+            <p id="resultadoDescripcion" class="resultado-descripcion">
+                Te gusta compartir momentos y experiencias.
+            </p>
+
+            <div class="reto-card">
+
+                <div class="reto-titulo">
+                    <i class="fa-solid fa-bullseye"></i>
+                    Tu reto
+                </div>
+
+                <p id="resultadoReto">
+                    No convertir tu vida en una competencia.
+                </p>
+
+            </div>
+
+            <div class="pregunta-card">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <div>
+                    <span>Pregúntate:</span>
+                    <p id="resultadoPregunta">
+                        ¿Lo que muestro refleja quién soy realmente?
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="versiculo-resultado">
+                <p id="resultadoVersiculo">
+                    “Así alumbre vuestra luz delante de los hombres...”
+                </p>
+
+                <span id="resultadoCita">
+                    Mateo 5:16
+                </span>
+            </div>
+
+            <button class="btn-principal" onclick="mostrarTiposCristiano()">
+                Continuar
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="btn-volver" onclick="mostrarRedes()">
+                <i class="fa-solid fa-arrow-left"></i>
+                Elegir otra
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             TIPO DE CRISTIANO
+        ========================== -->
+        <section id="pantallaCristiano" class="pantalla">
+
+            <div class="encabezado">
+
+                <span class="numero-paso">02 / 03</span>
+
+                <h2>
+                    ¿Qué tipo de cristiano
+                    <span>quieres ser en redes?</span>
+                </h2>
+
+                <p>
+                    Elige la actitud que quieres llevar contigo
+                    cada vez que utilices tu teléfono.
+                </p>
+
+            </div>
+
+            <div class="cristianos-grid">
+
+                <button class="tipo-card"
+                        onclick="mostrarCompromiso('representa')">
+
+                    <div class="tipo-icono">
+                        <i class="fa-solid fa-cross"></i>
+                    </div>
+
+                    <div>
+                        <strong>El que representa</strong>
+                        <p>
+                            Quiero que mi comportamiento refleje a Cristo.
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right flecha"></i>
+
+                </button>
+
+
+                <button class="tipo-card"
+                        onclick="mostrarCompromiso('edifica')">
+
+                    <div class="tipo-icono">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div>
+                        <strong>El que edifica</strong>
+                        <p>
+                            Quiero utilizar mis palabras para ayudar.
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right flecha"></i>
+
+                </button>
+
+
+                <button class="tipo-card"
+                        onclick="mostrarCompromiso('piensa')">
+
+                    <div class="tipo-icono">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <div>
+                        <strong>El que piensa</strong>
+                        <p>
+                            No todo lo que puedo publicar debo publicarlo.
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right flecha"></i>
+
+                </button>
+
+
+                <button class="tipo-card"
+                        onclick="mostrarCompromiso('influye')">
+
+                    <div class="tipo-icono">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+
+                    <div>
+                        <strong>El que influye</strong>
+                        <p>
+                            Quiero que mi influencia acerque a otros a Dios.
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right flecha"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMPROMISO
+        ========================== -->
+        <section id="pantallaCompromiso" class="pantalla">
+
+            <div class="compromiso-icono">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+
+            <span class="numero-paso">03 / 03</span>
+
+            <h2 id="compromisoTitulo">
+                Mi fe también se publica.
+            </h2>
+
+            <p id="compromisoTexto">
+                Esta será mi decisión.
+            </p>
+
+            <div class="pausa-box">
+
+                <div class="paso">
+                    <span>P</span>
+                    <strong>PAUSA</strong>
+                    <small>Antes de reaccionar</small>
+                </div>
+
+                <div class="linea"></div>
+
+                <div class="paso">
+                    <span>I</span>
+                    <strong>PIENSA</strong>
+                    <small>Antes de publicar</small>
+                </div>
+
+                <div class="linea"></div>
+
+                <div class="paso">
+                    <span>O</span>
+                    <strong>ORA</strong>
+                    <small>Antes de decidir</small>
+                </div>
+
+                <div class="linea"></div>
+
+                <div class="paso">
+                    <span>P</span>
+                    <strong>PUBLICA</strong>
+                    <small>Lo que edifica</small>
+                </div>
+
+            </div>
+
+            <div class="pregunta-final">
+
+                <span>Antes de publicar...</span>
+
+                <h3>
+                    ¿Esto refleja a Cristo?
+                </h3>
+
+            </div>
+
+            <div class="versiculo-final">
+
+                <p>
+                    “Ninguna palabra corrompida salga de vuestra boca,
+                    sino la que sea buena para la necesaria edificación...”
+                </p>
+
+                <strong>Efesios 4:29</strong>
+
+            </div>
+
+            <button class="btn-principal" onclick="mostrarRecuerdo()">
+                Ver mi recuerdo
+                <i class="fa-solid fa-gift"></i>
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             STICKER / RECUERDO
+        ========================== -->
+        <section id="pantallaRecuerdo" class="pantalla">
+
+            <div class="confeti">✦</div>
+
+            <span class="etiqueta">TU RECORDATORIO</span>
+
+            <h2>
+                Antes de publicar...
+            </h2>
+
+            <div class="sticker">
+
+                <div class="sticker-phone">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <div class="sticker-title">
+                    P.I.E.N.S.A.
+                </div>
+
+                <div class="sticker-question">
+                    ¿Esto refleja a Cristo?
+                </div>
+
+                <div class="sticker-line">
+                    PAUSA • PIENSA • ORA • PUBLICA
+                </div>
+
+                <div class="sticker-cross">
+                    ✝
+                </div>
+
+            </div>
+
+            <p class="recuerdo-texto">
+                Este pequeño recuerdo representa una decisión:
+                <strong>usar nuestras redes para edificar,
+                influenciar y reflejar a Cristo.</strong>
+            </p>
+
+            <div class="frase-final">
+                <i class="fa-solid fa-heart"></i>
+                Mi fe también se publica.
+            </div>
+
+            <button class="btn-principal" onclick="reiniciar()">
+                Volver a comenzar
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Mi Fe También Se Publica • 2026</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
