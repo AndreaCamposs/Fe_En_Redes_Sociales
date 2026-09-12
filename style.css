@@ -48,6 +48,10 @@ html {
     scroll-behavior: smooth;
 }
 
+/* =========================================
+   CONFIGURACIÓN GENERAL (Actualizar el body)
+========================================= */
+
 body {
     min-height: 100vh;
 
@@ -72,10 +76,11 @@ body {
         sans-serif;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Cambiado para apilar app y footer en orden */
+    justify-content: space-between; /* Distribuye espacio vertical */
     align-items: center;
 
-    padding: 25px;
+    padding: 25px 25px 10px 25px;
 
     overflow-x: hidden;
 }
@@ -2270,7 +2275,7 @@ h2 span {
 
 
 /* =========================================
-   PIE
+   PIE (Actualizar el footer)
 ========================================= */
 
 footer {
@@ -2278,12 +2283,11 @@ footer {
     text-align: center;
     color: #555b75;
     font-size: 11px;
-    padding: 15px 0;
-    margin-top: auto;
+    padding: 10px 0 0 0;
+    margin-top: 20px;
     position: relative;
     z-index: 2;
 }
-
 
 /* =========================================
    RESPONSIVE
